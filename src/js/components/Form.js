@@ -11,8 +11,6 @@ class Form extends React.Component{
       yearlyIncome: 0,
       creditScore: 0
     }
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (event) => {
@@ -37,7 +35,7 @@ class Form extends React.Component{
             id="carPrice"
             placeholder="Car Price"
             onChange={this.handleChange}
-            // value={this.state.value}
+            required
             />
           <br />
           <input
@@ -46,8 +44,7 @@ class Form extends React.Component{
             placeholder="Car Make"
             type="text"
             onChange={this.handleChange}
-            // value={this.state.value}
-
+            required
             />
           <br />
           <input
@@ -56,7 +53,7 @@ class Form extends React.Component{
             placeholder="Car Model"
             type="text"
             onChange={this.handleChange}
-            // value={this.state.value}
+            required
             />
           <br />
           <input
@@ -64,7 +61,7 @@ class Form extends React.Component{
             id="yearlyIncome"
             placeholder="Estimated Yearly income"
             onChange={this.handleChange}
-            // value={this.state.value}
+            required
             />
           <br />
           <input
@@ -72,7 +69,7 @@ class Form extends React.Component{
             id="creditScore"
             placeholder="Estimated Credit Score"
             onChange={this.handleChange}
-            // value={this.state.value}
+            required
             />
           <br />
           <button type="submit"/>
