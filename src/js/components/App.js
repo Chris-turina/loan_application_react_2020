@@ -5,17 +5,28 @@ import Form from './Form';
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      carPrice: 0,
+      carMake: '',
+      carModel: '',
+      yearlyIncome: 0,
+      creditScore: 0
+    }
+  }
+
+  loanAproved() {
 
   }
 
-  onFormSubmit(event) {
-    console.log();
-    // this.setState({newApplication: carPrice})
+  onFormChange(event) {
+    this.setState({ [event.target.name]: event.target.value})
+    console.log(this.state);
   }
 
   render() {
+    console.log(this.state);
     return (
-      <Form onFormSubmit={this.onFormSubmit.bind(this)} />
+      <Form handleChange={this.onFormChange.bind(this)} />
     );
   }
 }

@@ -4,24 +4,19 @@ import React, { Component } from 'react';
 class Form extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {
-      carPrice: '',
-      carMake: '',
-      carModel: '',
-      yearlyIncome: 0,
-      creditScore: 0
-    }
+
   }
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value})
-    console.log(this.state);
+    // this.setState({ [event.target.name]: event.target.value})
+    // console.log(this.state);
 }
 
 
   handleSubmit = (event) => {
    event.preventDefault();
    console.log(this.state);
+   // this.props.handleSubmit({[event.target.name]: event.target.value})
  }
 
 
@@ -32,10 +27,11 @@ class Form extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <input
             name='carPrice'
-            id="carPrice"
+            type='number'
+            min='0'
             placeholder="Car Price"
-            onChange={this.handleChange}
-            required
+            onChange={this.props.handleChange}
+            // required
             />
           <br />
           <input
@@ -43,8 +39,8 @@ class Form extends React.Component{
             id="carMake"
             placeholder="Car Make"
             type="text"
-            onChange={this.handleChange}
-            required
+            onChange={this.props.handleChange}
+            // required
             />
           <br />
           <input
@@ -52,24 +48,26 @@ class Form extends React.Component{
             id="carModel"
             placeholder="Car Model"
             type="text"
-            onChange={this.handleChange}
-            required
+            onChange={this.props.handleChange}
+            // required
             />
           <br />
           <input
             name='yearlyIncome'
-            id="yearlyIncome"
+            type='number'
+            min='0'
             placeholder="Estimated Yearly income"
-            onChange={this.handleChange}
-            required
+            onChange={this.props.handleChange}
+            // required
             />
           <br />
           <input
             name='creditScore'
-            id="creditScore"
+            type='number'
+            min='0'
             placeholder="Estimated Credit Score"
-            onChange={this.handleChange}
-            required
+            onChange={this.props.handleChange}
+            // required
             />
           <br />
           <button type="submit"/>
