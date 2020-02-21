@@ -6,12 +6,16 @@ class App extends Component {
   constructor() {
     super();
 
+  }
 
+  onFormSubmit(event) {
+    console.log();
+    // this.setState({newApplication: carPrice})
   }
 
   render() {
     return (
-      <Form />
+      <Form onFormSubmit={this.onFormSubmit.bind(this)} />
     );
   }
 }
