@@ -18,7 +18,7 @@ class App extends Component {
     event.preventDefault();
     console.log('sweet');
     console.log(this.state);
-    if (this.state.carPrice < this.state.yearlyIncome * 0.2) {
+    if (this.state.carPrice > this.state.yearlyIncome * 0.2) {
        return console.log('yes');
     } else {
       return console.log('no');
