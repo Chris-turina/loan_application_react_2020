@@ -13,7 +13,8 @@ class App extends Component {
       yearlyIncome: 0,
       creditScore: 0,
       message:[],
-      isLoaded: false
+      isLoaded: false,
+      displayForm: true
     }
   }
 
@@ -27,30 +28,40 @@ class App extends Component {
   }
 
 
-
   loanAproved(props) {
     event.preventDefault();
+    const displayDisqualify = props.displayDisqualify;
     if (this.state.carPrice > this.state.yearlyIncome * 0.2 || this.state.creditScore < 600) {
+      this.setState({
+        ...this.state,
+        displayForm: false,
+        displayDisqualify: true
+      })
+      console.log(this.state);
        return console.log('no');
     } else {
       return console.log('yes');
+      console.log(this.state);
     }
-
   }
 
   onFormChange(event) {
     event.preventDefault();
     this.setState({ [event.target.name]: event.target.value})
+
   }
 
   render() {
     return (
       <div>
-      <Form
-        handleSubmit={(this.loanAproved.bind(this))}
-        handleChange={this.onFormChange.bind(this)}
-      />
-      <Disqualify />
+      {this.state.displayForm && <Form
+          handleSubmit={(this.loanAproved.bind(this))}
+          handleChange={this.onFormChange.bind(this)}
+        />
+      }
+      {this.state.displayDisqualify && <Disqualify
+        />
+      }
       </div>
     );
   }
