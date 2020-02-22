@@ -10,18 +10,31 @@ class App extends Component {
       carMake: '',
       carModel: '',
       yearlyIncome: 0,
-      creditScore: 0
+      creditScore: 0,
+      message:[],
+      isLoaded: false
     }
   }
+
+  componentDidMount() {
+    fetch('http://localhost:8080/src/api/nonAprovalMessage.json')
+      .then(response => response.json())
+      .then(json => {
+        this.setState({ message: json})
+        console.log(this.state.message);
+      })
+  }
+
+
 
   loanAproved(props) {
     event.preventDefault();
     console.log('sweet');
     console.log(this.state);
-    if (this.state.carPrice > this.state.yearlyIncome * 0.2) {
-       return console.log('yes');
+    if (this.state.carPrice > this.state.yearlyIncome * 0.2 || this.state.creditScore < 600) {
+       return console.log('no');
     } else {
-      return console.log('no');
+      return console.log('yes');
     }
 
   }
