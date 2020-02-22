@@ -23,7 +23,6 @@ class App extends Component {
       .then(response => response.json())
       .then(json => {
         this.setState({ message: json})
-        console.log(this.state.message);
       })
   }
 
@@ -37,11 +36,11 @@ class App extends Component {
         displayForm: false,
         displayDisqualify: true
       })
-      console.log(this.state);
+      // console.log(this.state.message[0]);
        return console.log('no');
     } else {
       return console.log('yes');
-      console.log(this.state);
+      // console.log(this.state);
     }
   }
 
@@ -60,6 +59,7 @@ class App extends Component {
         />
       }
       {this.state.displayDisqualify && <Disqualify
+        props={this.state.message[0]}
         />
       }
       </div>

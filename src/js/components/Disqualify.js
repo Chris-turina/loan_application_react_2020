@@ -1,17 +1,15 @@
-import React, { Component} from 'react';
+import React from 'react';
 
-class Disqualify extends React.Component {
-  constructor() {
-    super();
-  }
+const Disqualify = ({ props }) => {
+  console.log(props.title);
 
+  return (
+    <div>
+      <h1>{props.title}</h1>
+      <p>{props.disqualifyMessage}</p>
+    </div>
 
-  render() {
-    return (
-      <div>Disqualify</div>
-
-    );
-  }
+  );
 }
 
 export default Disqualify;
