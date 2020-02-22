@@ -7,23 +7,6 @@ class Form extends React.Component{
 
   }
 
-//   handleChange = (event) => {
-//
-//     // this.setState({ [event.target.name]: event.target.value})
-//     // console.log(this.state);
-// }
-
-
- //  handleSubmit = (event) => {
- //    event.preventDefault();
- //    console.log(this.state);
- //    console.log('Stop');
- //
- //
- //   // this.props.handleSubmit({[event.target.name]: event.target.value})
- // }
-
-
   render() {
     return (
       <div>

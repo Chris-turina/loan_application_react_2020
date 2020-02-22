@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Form from './Form';
+import Disqualify from './Disqualify';
 
 class App extends Component {
   constructor() {
@@ -29,8 +30,6 @@ class App extends Component {
 
   loanAproved(props) {
     event.preventDefault();
-    console.log('sweet');
-    console.log(this.state);
     if (this.state.carPrice > this.state.yearlyIncome * 0.2 || this.state.creditScore < 600) {
        return console.log('no');
     } else {
@@ -41,17 +40,18 @@ class App extends Component {
 
   onFormChange(event) {
     event.preventDefault();
-    console.log("hello");
     this.setState({ [event.target.name]: event.target.value})
-    console.log(this.state);
   }
 
   render() {
     return (
+      <div>
       <Form
         handleSubmit={(this.loanAproved.bind(this))}
         handleChange={this.onFormChange.bind(this)}
       />
+      <Disqualify />
+      </div>
     );
   }
 }
