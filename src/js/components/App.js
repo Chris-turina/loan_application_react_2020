@@ -14,19 +14,31 @@ class App extends Component {
     }
   }
 
-  loanAproved() {
+  loanAproved(props) {
+    event.preventDefault();
+    console.log('sweet');
+    console.log(this.state);
+    if (this.state.carPrice < this.state.yearlyIncome * 0.2) {
+       return console.log('yes');
+    } else {
+      return console.log('no');
+    }
 
   }
 
   onFormChange(event) {
+    event.preventDefault();
+    console.log("hello");
     this.setState({ [event.target.name]: event.target.value})
     console.log(this.state);
   }
 
   render() {
-    console.log(this.state);
     return (
-      <Form handleChange={this.onFormChange.bind(this)} />
+      <Form
+        handleSubmit={(this.loanAproved.bind(this))}
+        handleChange={this.onFormChange.bind(this)}
+      />
     );
   }
 }

@@ -7,24 +7,28 @@ class Form extends React.Component{
 
   }
 
-  handleChange = (event) => {
-    // this.setState({ [event.target.name]: event.target.value})
-    // console.log(this.state);
-}
+//   handleChange = (event) => {
+//
+//     // this.setState({ [event.target.name]: event.target.value})
+//     // console.log(this.state);
+// }
 
 
-  handleSubmit = (event) => {
-   event.preventDefault();
-   console.log(this.state);
-   // this.props.handleSubmit({[event.target.name]: event.target.value})
- }
+ //  handleSubmit = (event) => {
+ //    event.preventDefault();
+ //    console.log(this.state);
+ //    console.log('Stop');
+ //
+ //
+ //   // this.props.handleSubmit({[event.target.name]: event.target.value})
+ // }
 
 
   render() {
     return (
       <div>
         <h1>Loan Application</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.handleSubmit}>
           <input
             name='carPrice'
             type='number'
