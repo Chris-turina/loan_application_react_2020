@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Form from './Form';
 import Disqualify from './Disqualify';
+import NewAccount from './NewAccount';
 
 class App extends Component {
   constructor() {
@@ -36,11 +37,15 @@ class App extends Component {
         displayForm: false,
         displayDisqualify: true
       })
-      // console.log(this.state.message[0]);
        return console.log('no');
     } else {
+      this.setState({
+        ...this.state,
+        displayForm: false,
+        displayNewAccount: true
+      })
+
       return console.log('yes');
-      // console.log(this.state);
     }
   }
 
@@ -62,6 +67,8 @@ class App extends Component {
         props={this.state.message[0]}
         />
       }
+
+      {this.state.displayNewAccount && < NewAccount />}
       </div>
     );
   }
