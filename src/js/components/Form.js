@@ -51,7 +51,8 @@ class Form extends React.Component{
           <input
             name='creditScore'
             type='number'
-            min='0'
+            min='300'
+            max='850'
             placeholder="Estimated Credit Score"
             onChange={this.props.handleChange}
             // required

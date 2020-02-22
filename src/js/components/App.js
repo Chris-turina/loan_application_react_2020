@@ -19,6 +19,7 @@ class App extends Component {
     }
   }
 
+// Grabbing the API message when bot approved for the loan
   componentDidMount() {
     fetch('http://localhost:8080/src/api/nonAprovalMessage.json')
       .then(response => response.json())
@@ -27,7 +28,7 @@ class App extends Component {
       })
   }
 
-
+// handles submit of the form to update the state and choose whether approved or not
   loanAproved(props) {
     event.preventDefault();
     const displayDisqualify = props.displayDisqualify;
@@ -49,6 +50,7 @@ class App extends Component {
     }
   }
 
+// Detects when user changes state
   onFormChange(event) {
     event.preventDefault();
     this.setState({ [event.target.name]: event.target.value})
