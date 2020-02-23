@@ -66,11 +66,13 @@ class App extends Component {
 // Handles the submit of the New Account page
   handleSubmitNewAccount(props) {
     event.preventDefault();
-    console.log(this.state.passwordOne);
-    if(this.state.passwordOne.length < 8) {
-      console.log('short password');
+    const pass = this.state.passwordOne
+    const reg = /(?=.{8,})(?=.*[0-9]|[!@#$%^&*])/
+    const test = reg.test(pass)
+    if (test) {
+      console.log('pass');
     } else {
-      console.log('good password');
+      console.log('fail');
     }
 
   }
