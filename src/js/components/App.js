@@ -15,7 +15,9 @@ class App extends Component {
       creditScore: 0,
       message:[],
       isLoaded: false,
-      displayForm: true
+      displayForm: true,
+      passwordOne: '',
+      passwordTwo: ''
     }
   }
 
@@ -31,7 +33,6 @@ class App extends Component {
 // handles submit of the form to update the state and choose whether approved or not
   loanAproved(props) {
     event.preventDefault();
-    const displayDisqualify = props.displayDisqualify;
     if (this.state.carPrice > this.state.yearlyIncome * 0.2 || this.state.creditScore < 600) {
       this.setState({
         ...this.state,
@@ -50,12 +51,30 @@ class App extends Component {
     }
   }
 
-// Detects when user changes state
+// Detects when user changes state for the input forms
   onFormChange(event) {
     event.preventDefault();
     this.setState({ [event.target.name]: event.target.value})
-
   }
+
+
+// Detects when the user changes the state for the Passwords
+  handleValidation(event) {
+    // event.preventDefault();
+    this.setState({ [event.target.name]: event.target.value})
+    console.log(this.state);
+  }
+
+// Handles the submit of the New Account page
+  handleSubmitNewAccount(e) {
+    e.preventDefault();
+
+    // if(this.state.value.length < 8) {
+    //   console.log('short password');
+    // }
+    console.log(this.state);
+  }
+
 
   render() {
     return (
@@ -70,7 +89,11 @@ class App extends Component {
         />
       }
 
-      {this.state.displayNewAccount && < NewAccount />}
+      {this.state.displayNewAccount && < NewAccount
+        handleValidation={this.handleValidation.bind(this)}
+        handleSubmitNewAccount={this.handleSubmitNewAccount.bind(this)}
+       />
+       }
       </div>
     );
   }

@@ -23,7 +23,6 @@ class Form extends React.Component{
           <br />
           <input
             name='carMake'
-            id="carMake"
             placeholder="Car Make"
             type="text"
             onChange={this.props.handleChange}
@@ -32,7 +31,6 @@ class Form extends React.Component{
           <br />
           <input
             name='carModel'
-            id="carModel"
             placeholder="Car Model"
             type="text"
             onChange={this.props.handleChange}
