@@ -53,26 +53,26 @@ class App extends Component {
 
 // Detects when user changes state for the input forms
   onFormChange(event) {
-    event.preventDefault();
     this.setState({ [event.target.name]: event.target.value})
   }
 
 
 // Detects when the user changes the state for the Passwords
   handleValidation(event) {
-    // event.preventDefault();
     this.setState({ [event.target.name]: event.target.value})
-    console.log(this.state);
+    // console.log(this.state);
   }
 
 // Handles the submit of the New Account page
-  handleSubmitNewAccount(e) {
-    e.preventDefault();
+  handleSubmitNewAccount(props) {
+    event.preventDefault();
+    console.log(this.state.passwordOne);
+    if(this.state.passwordOne.length < 8) {
+      console.log('short password');
+    } else {
+      console.log('good password');
+    }
 
-    // if(this.state.value.length < 8) {
-    //   console.log('short password');
-    // }
-    console.log(this.state);
   }
 
 
