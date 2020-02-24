@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import './App.css';
+import '../../styling/App.css';
 import Form from './Form';
 import Disqualify from './Disqualify';
 import NewAccount from './NewAccount';
