@@ -13,6 +13,7 @@ _This application will let a user apply for a loan to purchase a car.  The user 
 * _run 'npm install'_
 * _run 'npm start' to run the app locally_
 * _run 'npm run build' to build the project for production_
+  _note to setup: working on macOS Catalina you do get an error with npm install_
 
 ### Notes
 
