@@ -1,5 +1,5 @@
-import './Form.css'
 import React, { Component } from 'react';
+import './Form.css';
 
 class Form extends React.Component{
   constructor(props) {
@@ -18,7 +18,7 @@ class Form extends React.Component{
             min='0'
             placeholder="Enter the Car Price"
             onChange={this.props.handleChange}
-            // required
+            required
             />
           <br />
           <input
@@ -26,7 +26,7 @@ class Form extends React.Component{
             placeholder="Enter the Make of the Car"
             type="text"
             onChange={this.props.handleChange}
-            // required
+            required
             />
           <br />
           <input
@@ -34,7 +34,7 @@ class Form extends React.Component{
             placeholder="Enter the Model of the Car"
             type="text"
             onChange={this.props.handleChange}
-            // required
+            required
             />
           <br />
           <input
@@ -44,7 +44,7 @@ class Form extends React.Component{
             length='40'
             placeholder="Estimated Yearly income"
             onChange={this.props.handleChange}
-            // required
+            required
             />
           <br />
           <input
@@ -54,7 +54,7 @@ class Form extends React.Component{
             max='850'
             placeholder="Estimated Credit Score"
             onChange={this.props.handleChange}
-            // required
+            required
             />
           <br />
           <button type="submit">Submit</button>
