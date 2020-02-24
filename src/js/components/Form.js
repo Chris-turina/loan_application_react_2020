@@ -1,5 +1,5 @@
+import './Form.css'
 import React, { Component } from 'react';
-
 
 class Form extends React.Component{
   constructor(props) {
@@ -10,20 +10,20 @@ class Form extends React.Component{
   render() {
     return (
       <div>
-        <h1>Loan Application</h1>
+        <h1 className="form-title" data-testid="application-title">Loan Application</h1>
         <form onSubmit={this.props.handleSubmit}>
           <input
             name='carPrice'
             type='number'
             min='0'
-            placeholder="Car Price"
+            placeholder="Enter the Car Price"
             onChange={this.props.handleChange}
             // required
             />
           <br />
           <input
             name='carMake'
-            placeholder="Car Make"
+            placeholder="Enter the Make of the Car"
             type="text"
             onChange={this.props.handleChange}
             // required
@@ -31,7 +31,7 @@ class Form extends React.Component{
           <br />
           <input
             name='carModel'
-            placeholder="Car Model"
+            placeholder="Enter the Model of the Car"
             type="text"
             onChange={this.props.handleChange}
             // required
@@ -41,6 +41,7 @@ class Form extends React.Component{
             name='yearlyIncome'
             type='number'
             min='0'
+            length='40'
             placeholder="Estimated Yearly income"
             onChange={this.props.handleChange}
             // required
@@ -56,7 +57,7 @@ class Form extends React.Component{
             // required
             />
           <br />
-          <button type="submit"/>
+          <button type="submit">Submit</button>
         </form>
       </div>
     );

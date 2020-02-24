@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import './App.css';
 import Form from './Form';
 import Disqualify from './Disqualify';
 import NewAccount from './NewAccount';
@@ -21,7 +22,7 @@ class App extends Component {
     }
   }
 
-// Grabbing the API message when bot approved for the loan
+Grabbing the API message when bot approved for the loan
   componentDidMount() {
     fetch('http://localhost:8080/src/api/nonAprovalMessage.json')
       .then(response => response.json())
@@ -71,7 +72,7 @@ class App extends Component {
     // console.log(this.state);
   }
 
-// Handles the submit of the New Account page
+//  handles the Creation of the new account and an attempt to verify that the passwords match up with 8 charaters log and a special charater/number
   handleSubmitNewAccount(props) {
     event.preventDefault();
     const pass = this.state.passwordOne
@@ -88,7 +89,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
       {this.state.displayForm && <Form
           handleSubmit={(this.loanAproved.bind(this))}
           handleChange={this.onFormChange.bind(this)}
