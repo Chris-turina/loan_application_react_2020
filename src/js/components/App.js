@@ -22,17 +22,17 @@ class App extends Component {
     }
   }
 
-Grabbing the API message when bot approved for the loan
+// Grabbing the API message when bot approved for the loan
   componentDidMount() {
     fetch('http://localhost:8080/src/api/nonAprovalMessage.json')
       .then(response => response.json())
       .then(json => {
         this.setState({ message: json})
       })
-      if(this.state.carPrice > 1000000) {
-        return response.status(400).send(err)
-
-      }
+      // if(this.state.carPrice > 1000000) {
+      //   return response.status(400).send(err)
+      //
+      // }
 
   }
 
