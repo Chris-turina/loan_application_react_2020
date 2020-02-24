@@ -28,12 +28,20 @@ class App extends Component {
       .then(json => {
         this.setState({ message: json})
       })
+      if(this.state.carPrice > 1000000) {
+        return response.status(400).send(err)
+
+      }
+
   }
 
 // handles submit of the form to update the state and choose whether approved or not
   loanAproved(props) {
     event.preventDefault();
-    if (this.state.carPrice > this.state.yearlyIncome * 0.2 || this.state.creditScore < 600) {
+    if(this.state.carPrice > 1000000) {
+      console.log('over a $mil');
+
+    } if (this.state.carPrice > this.state.yearlyIncome * 0.2 || this.state.creditScore < 600 && this.state.carPrice) {
       this.setState({
         ...this.state,
         displayForm: false,
