@@ -1,7 +1,7 @@
 # _Cuna Mutual Group Loan Application_
 #### _This is a browser-based application for pre-qualifying a potential user for a loan._
 
-#### By _**{Chris Turina}**_
+#### By _**Chris Turina**_
 
 ## Description
 
@@ -14,4 +14,4 @@ _This application will let a user apply for a loan to purchase a car.  The user 
 * _run 'npm start' to run the app locally_
 * _run 'npm run build' to build the project for production_
 
-Copyright (c) 2016 **_Chris Turina_**
+Copyright (c) 2020 **_Chris Turina_**
