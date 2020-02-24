@@ -14,4 +14,13 @@ _This application will let a user apply for a loan to purchase a car.  The user 
 * _run 'npm start' to run the app locally_
 * _run 'npm run build' to build the project for production_
 
+### Notes
+
+_A few notes with the App:_
+_I have never done testing with React so I attempted to learn testing with Jest and React and installed it using Node but did not quite write any tests._
+_I was unable to get a `Bad Response` call_
+_The create password field is not finished_
+_With more Time I would learn how to test with jest more and implement it into the project.  I would add more styling to make the page look more professional. I would refactor the code to try and clean up redundancies.
+
+
 Copyright (c) 2020 **_Chris Turina_**
